@@ -1,0 +1,1778 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SIMS Neuro Clinics</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+RESET
+========================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'DM Sans',sans-serif;
+background:#f8fafc;
+color:#111827;
+overflow-x:hidden;
+}
+
+img{
+max-width:100%;
+display:block;
+}
+
+/* =========================
+VARIABLES
+========================= */
+
+:root{
+
+--navy:#111827;
+--navy-soft:#1e293b;
+--slate:#64748b;
+--white:#ffffff;
+--gold:#c8a96b;
+--light:#f8fafc;
+
+}
+
+/* =========================
+GENERAL
+========================= */
+
+section{
+padding:110px 7%;
+}
+
+.container{
+max-width:1400px;
+margin:auto;
+}
+
+.section-tag{
+font-size:.75rem;
+letter-spacing:.22em;
+text-transform:uppercase;
+color:var(--gold);
+margin-bottom:1rem;
+font-weight:600;
+}
+
+.section-title{
+font-family:'Cormorant Garamond',serif;
+font-size:clamp(3rem,5vw,5.5rem);
+line-height:1.02;
+font-weight:500;
+margin-bottom:1.3rem;
+}
+
+.section-sub{
+max-width:650px;
+font-size:1rem;
+line-height:1.9;
+color:var(--slate);
+}
+
+/* =========================
+NAVBAR
+========================= */
+
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:22px 7%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:999;
+transition:.35s;
+}
+
+nav.scrolled{
+background:rgba(255,255,255,.92);
+backdrop-filter:blur(16px);
+box-shadow:0 10px 40px rgba(0,0,0,.05);
+}
+
+.logo{
+font-family:'DM Serif Display',serif;
+font-size:1.9rem;
+color:white;
+text-decoration:none;
+}
+
+nav.scrolled .logo{
+color:#111827;
+}
+
+.nav-links{
+display:flex;
+gap:2rem;
+align-items:center;
+}
+
+.nav-links a{
+text-decoration:none;
+color:white;
+font-size:.82rem;
+letter-spacing:.12em;
+text-transform:uppercase;
+transition:.3s;
+}
+
+nav.scrolled .nav-links a{
+color:#111827;
+}
+
+.nav-links a:hover{
+color:var(--gold);
+}
+
+.nav-btn{
+padding:14px 26px;
+border-radius:50px;
+background:white;
+color:#111827 !important;
+font-weight:600;
+}
+
+/* =========================
+HERO
+========================= */
+
+#hero{
+
+min-height:100vh;
+
+display:flex;
+align-items:center;
+
+background:
+linear-gradient(to right, rgba(15,23,42,.95), rgba(15,23,42,.72)),
+url('https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=1800&auto=format&fit=crop');
+
+background-size:cover;
+background-position:center;
+
+overflow:hidden;
+
+}
+
+.hero-grid{
+display:grid;
+grid-template-columns:1.05fr .95fr;
+gap:5rem;
+align-items:center;
+}
+
+.hero-left{
+color:white;
+}
+
+.hero-title{
+font-family:'Cormorant Garamond',serif;
+font-size:clamp(4rem,7vw,7rem);
+line-height:.92;
+margin-bottom:2rem;
+}
+
+.hero-sub{
+font-size:1.08rem;
+line-height:2;
+color:rgba(255,255,255,.72);
+max-width:620px;
+margin-bottom:2.5rem;
+}
+
+.hero-buttons{
+display:flex;
+gap:1rem;
+flex-wrap:wrap;
+margin-bottom:3rem;
+}
+
+.hero-btn{
+padding:18px 34px;
+border-radius:60px;
+text-decoration:none;
+text-transform:uppercase;
+letter-spacing:.14em;
+font-size:.82rem;
+transition:.35s;
+}
+
+.hero-primary{
+background:linear-gradient(135deg,var(--gold),#b8924f);
+color:white;
+}
+
+.hero-primary:hover{
+transform:translateY(-4px);
+}
+
+.hero-secondary{
+border:1px solid rgba(255,255,255,.15);
+color:white;
+backdrop-filter:blur(12px);
+}
+
+.trust-chips{
+display:flex;
+gap:1rem;
+flex-wrap:wrap;
+}
+
+.chip{
+padding:12px 18px;
+border-radius:40px;
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.08);
+backdrop-filter:blur(14px);
+font-size:.82rem;
+color:rgba(255,255,255,.88);
+}
+
+.hero-right{
+position:relative;
+}
+
+.hero-card{
+border-radius:34px;
+overflow:hidden;
+box-shadow:0 40px 80px rgba(0,0,0,.18);
+}
+
+.hero-card img{
+width:100%;
+height:720px;
+object-fit:cover;
+}
+
+.floating-box{
+position:absolute;
+left:-35px;
+bottom:40px;
+background:white;
+padding:1.4rem 1.7rem;
+border-radius:24px;
+box-shadow:0 20px 50px rgba(0,0,0,.08);
+}
+
+.floating-box h4{
+font-family:'Cormorant Garamond',serif;
+font-size:2rem;
+margin-bottom:.2rem;
+}
+
+.floating-box p{
+font-size:.85rem;
+color:var(--slate);
+}
+
+/* =========================
+TRUST STRIP
+========================= */
+
+#strip{
+background:#111827;
+padding:24px 0;
+overflow:hidden;
+}
+
+.strip-track{
+display:flex;
+gap:4rem;
+white-space:nowrap;
+width:max-content;
+animation:scroll 18s linear infinite;
+}
+
+.strip-item{
+font-size:.76rem;
+letter-spacing:.2em;
+text-transform:uppercase;
+color:rgba(255,255,255,.65);
+}
+
+/* =========================
+CONDITIONS
+========================= */
+
+.conditions-grid{
+margin-top:5rem;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:2rem;
+}
+
+.condition{
+background:white;
+border-radius:30px;
+overflow:hidden;
+text-decoration:none;
+box-shadow:0 20px 50px rgba(15,23,42,.06);
+transition:.4s;
+position:relative;
+}
+
+.condition:hover{
+transform:translateY(-10px);
+}
+
+.condition-image{
+width:100%;
+height:240px;
+object-fit:cover;
+}
+
+.condition-content{
+padding:2rem;
+}
+
+.condition-top{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:1rem;
+gap:1rem;
+}
+
+.condition h3{
+font-family:'Cormorant Garamond',serif;
+font-size:2rem;
+color:#111827;
+}
+
+.condition p{
+line-height:1.8;
+color:#64748b;
+}
+
+.condition-arrow{
+width:48px;
+height:48px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+background:linear-gradient(135deg,#111827,#334155);
+color:white;
+font-size:1.1rem;
+transition:.35s;
+flex-shrink:0;
+}
+
+.condition:hover .condition-arrow{
+transform:rotate(45deg) scale(1.08);
+}
+
+/* =========================
+DOCTOR
+========================= */
+
+.doctor-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:5rem;
+align-items:center;
+margin-top:4rem;
+}
+
+.doctor-left{
+position:relative;
+}
+
+.doctor-image{
+width:100%;
+height:720px;
+object-fit:cover;
+border-radius:34px;
+}
+
+.doctor-floating{
+position:absolute;
+bottom:30px;
+left:-30px;
+background:white;
+padding:1.5rem 1.8rem;
+border-radius:24px;
+box-shadow:0 20px 50px rgba(0,0,0,.08);
+}
+
+.doctor-floating h3{
+font-family:'Cormorant Garamond',serif;
+font-size:2rem;
+margin-bottom:.3rem;
+}
+
+.doctor-floating p{
+color:#64748b;
+}
+
+.doctor-name{
+font-family:'Cormorant Garamond',serif;
+font-size:3rem;
+margin-bottom:1rem;
+}
+
+.doctor-desc{
+font-size:1rem;
+line-height:1.9;
+color:#64748b;
+max-width:600px;
+}
+
+.doctor-points{
+margin-top:3rem;
+display:grid;
+gap:1.5rem;
+}
+
+.doctor-point{
+display:flex;
+gap:1rem;
+align-items:flex-start;
+}
+
+.point-icon{
+width:48px;
+height:48px;
+border-radius:14px;
+background:#eef2ff;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-shrink:0;
+font-weight:700;
+}
+
+/* =========================
+REVIEWS
+========================= */
+
+.reviews-grid{
+margin-top:4rem;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:2rem;
+}
+
+.review-card{
+background:white;
+padding:2rem;
+border-radius:28px;
+box-shadow:0 20px 50px rgba(15,23,42,.05);
+}
+
+.review-user{
+display:flex;
+align-items:center;
+gap:1rem;
+margin-bottom:1.5rem;
+}
+
+.review-profile{
+width:58px;
+height:58px;
+border-radius:50%;
+object-fit:cover;
+}
+
+.review-user h4{
+font-size:1rem;
+margin-bottom:.3rem;
+}
+
+.stars{
+color:#eab308;
+font-size:1.1rem;
+}
+
+.review-card p{
+line-height:1.9;
+color:#64748b;
+}
+
+/* =========================
+GALLERY
+========================= */
+
+.gallery-grid{
+margin-top:5rem;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:1.5rem;
+}
+
+.gallery-card{
+background:white;
+border-radius:26px;
+overflow:hidden;
+box-shadow:0 20px 50px rgba(15,23,42,.06);
+transition:.35s;
+}
+
+.gallery-card:hover{
+transform:translateY(-8px);
+}
+
+.gallery-card img{
+width:100%;
+height:240px;
+object-fit:cover;
+}
+
+.gallery-content{
+padding:1.5rem;
+}
+
+.gallery-content h3{
+font-family:'Cormorant Garamond',serif;
+font-size:1.7rem;
+margin-bottom:.7rem;
+}
+
+.gallery-content p{
+line-height:1.8;
+color:#64748b;
+font-size:.92rem;
+}
+
+/* =========================
+APPOINTMENT
+========================= */
+
+#appointment{
+background:
+linear-gradient(rgba(15,23,42,.92),rgba(15,23,42,.92)),
+url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1600&auto=format&fit=crop');
+background-size:cover;
+background-position:center;
+color:white;
+}
+
+.appt-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:5rem;
+align-items:center;
+}
+
+.form-card{
+background:rgba(255,255,255,.08);
+padding:3rem;
+border-radius:30px;
+backdrop-filter:blur(18px);
+border:1px solid rgba(255,255,255,.08);
+}
+
+.form-card input,
+.form-card select{
+width:100%;
+padding:18px;
+margin-bottom:1rem;
+border:none;
+outline:none;
+border-radius:16px;
+background:rgba(255,255,255,.08);
+color:white;
+}
+
+.submit-btn{
+width:100%;
+padding:18px;
+border:none;
+border-radius:16px;
+background:linear-gradient(135deg,var(--gold),#b8924f);
+color:white;
+text-transform:uppercase;
+letter-spacing:.14em;
+cursor:pointer;
+margin-top:1rem;
+}
+
+.quick-buttons{
+display:flex;
+gap:1rem;
+margin-top:1rem;
+}
+
+.quick-buttons a{
+flex:1;
+padding:16px;
+border-radius:16px;
+text-align:center;
+text-decoration:none;
+color:white;
+border:1px solid rgba(255,255,255,.1);
+}
+
+/* =========================
+FAQ
+========================= */
+
+.faq-list{
+margin-top:4rem;
+}
+
+.faq-item{
+background:white;
+border-radius:24px;
+margin-bottom:1rem;
+overflow:hidden;
+box-shadow:0 20px 50px rgba(15,23,42,.06);
+}
+
+.faq-question{
+padding:1.6rem 2rem;
+display:flex;
+justify-content:space-between;
+align-items:center;
+cursor:pointer;
+gap:1rem;
+}
+
+.faq-icon{
+width:40px;
+height:40px;
+border-radius:50%;
+background:#f8fafc;
+display:flex;
+align-items:center;
+justify-content:center;
+transition:.3s;
+flex-shrink:0;
+}
+
+.faq-item.active .faq-icon{
+transform:rotate(45deg);
+}
+
+.faq-answer{
+max-height:0;
+overflow:hidden;
+transition:.4s;
+}
+
+.faq-answer p{
+padding:0 2rem 2rem;
+line-height:1.9;
+color:var(--slate);
+}
+
+/* =========================
+FOOTER
+========================= */
+
+footer{
+background:#111827;
+color:white;
+padding:80px 7% 40px;
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:2fr 1fr 1fr;
+gap:4rem;
+margin-bottom:4rem;
+}
+
+.footer-logo{
+font-family:'DM Serif Display',serif;
+font-size:2rem;
+margin-bottom:1rem;
+}
+
+.footer-text{
+max-width:420px;
+line-height:1.9;
+color:rgba(255,255,255,.65);
+}
+
+.footer-heading{
+margin-bottom:1rem;
+font-size:.8rem;
+letter-spacing:.15em;
+text-transform:uppercase;
+color:rgba(255,255,255,.4);
+}
+
+.footer-links{
+display:flex;
+flex-direction:column;
+gap:1rem;
+}
+
+.footer-links a{
+text-decoration:none;
+color:rgba(255,255,255,.7);
+}
+
+.footer-bottom{
+padding-top:2rem;
+border-top:1px solid rgba(255,255,255,.08);
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+gap:1rem;
+font-size:.85rem;
+color:rgba(255,255,255,.4);
+}
+
+/* =========================
+WHATSAPP
+========================= */
+
+.wa-float{
+position:fixed;
+right:18px;
+bottom:18px;
+width:60px;
+height:60px;
+border-radius:50%;
+background:#25d366;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:1.4rem;
+text-decoration:none;
+box-shadow:0 20px 40px rgba(37,211,102,.35);
+z-index:999;
+}
+
+/* =========================
+ANIMATION
+========================= */
+
+.reveal{
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+
+@keyframes scroll{
+0%{
+transform:translateX(0);
+}
+100%{
+transform:translateX(-40%);
+}
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media(max-width:768px){
+
+section{
+padding:80px 22px;
+}
+
+.nav-links{
+display:none;
+}
+
+.hero-grid,
+.doctor-grid,
+.appt-grid{
+grid-template-columns:1fr;
+display:grid;
+gap:3rem;
+}
+
+.hero-title{
+font-size:3.3rem;
+}
+
+.hero-card img{
+height:340px;
+}
+
+.floating-box{
+left:18px;
+bottom:-20px;
+width:calc(100% - 36px);
+}
+
+.hero-right{
+padding-bottom:50px;
+}
+
+.conditions-grid,
+.reviews-grid{
+grid-template-columns:1fr;
+}
+
+.gallery-grid{
+grid-template-columns:1fr 1fr;
+gap:12px;
+}
+
+.gallery-card img{
+height:160px;
+}
+
+.gallery-content{
+padding:1rem;
+}
+
+.gallery-content h3{
+font-size:1.2rem;
+}
+
+.gallery-content p{
+font-size:.82rem;
+}
+
+.doctor-image{
+height:420px;
+}
+
+.doctor-floating{
+left:18px;
+bottom:-20px;
+width:calc(100% - 36px);
+}
+
+.doctor-left{
+padding-bottom:50px;
+}
+
+.quick-buttons{
+flex-direction:column;
+}
+
+.footer-grid{
+grid-template-columns:1fr;
+}
+
+.footer-bottom{
+flex-direction:column;
+align-items:flex-start;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav id="navbar">
+
+<a href="#" class="logo">
+SIMS Neuro
+</a>
+
+<div class="nav-links">
+
+<a href="#conditions">
+Conditions
+</a>
+
+<a href="#doctor">
+Doctor
+</a>
+
+<a href="#gallery">
+Gallery
+</a>
+
+<a href="#appointment" class="nav-btn">
+Book Consultation
+</a>
+
+</div>
+
+</nav>
+
+<!-- HERO -->
+
+<section id="hero">
+
+<div class="container hero-grid">
+
+<div class="hero-left reveal">
+
+<div class="section-tag">
+Advanced Neurology Care
+</div>
+
+<h1 class="hero-title">
+Advanced Neurology Care.<br>
+Designed Around You.
+</h1>
+
+<p class="hero-sub">
+Expert neurological consultations and compassionate care in Vijayawada.
+Modern diagnosis, trusted treatment and patient-focused neurological support.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#appointment" class="hero-btn hero-primary">
+Book Consultation
+</a>
+
+<a href="https://wa.me/917660049499" class="hero-btn hero-secondary">
+WhatsApp
+</a>
+
+</div>
+
+<div class="trust-chips">
+
+<div class="chip">
+⭐ 4.7 Rating
+</div>
+
+<div class="chip">
+Trusted Neurology Care
+</div>
+
+<div class="chip">
+Modern Consultation Experience
+</div>
+
+</div>
+
+</div>
+
+<div class="hero-right reveal">
+
+<div class="hero-card">
+
+<img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=1600&auto=format&fit=crop">
+
+</div>
+
+<div class="floating-box">
+
+<h4>
+18+
+</h4>
+
+<p>
+Patient Reviews
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- STRIP -->
+
+<section id="strip">
+
+<div class="strip-track">
+
+<div class="strip-item">Trusted Neurology Care</div>
+<div class="strip-item">Modern Diagnosis</div>
+<div class="strip-item">Stroke & Migraine Care</div>
+<div class="strip-item">Patient-Focused Consultation</div>
+<div class="strip-item">Advanced Neurological Evaluation</div>
+<div class="strip-item">Trusted Neurology Care</div>
+
+</div>
+
+</section>
+
+<!-- CONDITIONS -->
+
+<section id="conditions">
+
+<div class="container">
+
+<div class="reveal">
+
+<div class="section-tag">
+Conditions & Treatments
+</div>
+
+<h2 class="section-title">
+Focused Neurological Care.<br>
+Built Around Clarity.
+</h2>
+
+<p class="section-sub">
+Advanced neurological consultations and treatment pathways designed with precision and compassionate support.
+</p>
+
+</div>
+
+<div class="conditions-grid">
+
+<a href="migraine.html" class="condition reveal">
+
+<img 
+src="https://images.unsplash.com/photo-1559757175-5700dde675bc?q=80&w=1200&auto=format&fit=crop"
+class="condition-image"
+>
+
+<div class="condition-content">
+
+<div class="condition-top">
+
+<h3>Migraine</h3>
+
+<div class="condition-arrow">
+↗
+</div>
+
+</div>
+
+<p>
+Modern diagnosis and treatment strategies for chronic migraine and severe headaches.
+</p>
+
+</div>
+
+</a>
+
+<a href="epilepsy.html" class="condition reveal">
+
+<img 
+src="https://images.unsplash.com/photo-1581595219315-a187dd40c322?q=80&w=1200&auto=format&fit=crop"
+class="condition-image"
+>
+
+<div class="condition-content">
+
+<div class="condition-top">
+
+<h3>Epilepsy</h3>
+
+<div class="condition-arrow">
+↗
+</div>
+
+</div>
+
+<p>
+Careful neurological evaluation and long-term epilepsy management support.
+</p>
+
+</div>
+
+</a>
+
+<a href="stroke-care.html" class="condition reveal">
+
+<img 
+src="https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=1200&auto=format&fit=crop"
+class="condition-image"
+>
+
+<div class="condition-content">
+
+<div class="condition-top">
+
+<h3>Stroke Care</h3>
+
+<div class="condition-arrow">
+↗
+</div>
+
+</div>
+
+<p>
+Early diagnosis, recovery planning and neurological monitoring after stroke.
+</p>
+
+</div>
+
+</a>
+
+<a href="parkinsons.html" class="condition reveal">
+
+<img 
+src="https://images.unsplash.com/photo-1580281657527-47f249e8f4df?q=80&w=1200&auto=format&fit=crop"
+class="condition-image"
+>
+
+<div class="condition-content">
+
+<div class="condition-top">
+
+<h3>Parkinson’s</h3>
+
+<div class="condition-arrow">
+↗
+</div>
+
+</div>
+
+<p>
+Patient-focused consultation and supportive neurological care.
+</p>
+
+</div>
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- DOCTOR -->
+
+<section id="doctor">
+
+<div class="container">
+
+<div class="reveal">
+
+<div class="section-tag">
+Our Neurology Specialist
+</div>
+
+<h2 class="section-title">
+Meet The Doctor Behind<br>
+SIMS Neuro Clinics
+</h2>
+
+<p class="section-sub">
+Experienced neurological consultation focused on clarity, compassionate care and modern treatment support.
+</p>
+
+</div>
+
+<div class="doctor-grid">
+
+<div class="doctor-left reveal">
+
+<img 
+src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=1600&auto=format&fit=crop"
+class="doctor-image"
+>
+
+<div class="doctor-floating">
+
+<h3>
+15+ Years
+</h3>
+
+<p>
+Neurology Experience
+</p>
+
+</div>
+
+</div>
+
+<div class="doctor-right reveal">
+
+<h2 class="doctor-name">
+Dr. Arjun Rao
+</h2>
+
+<p class="doctor-desc">
+Known for patient-first neurological consultations, detailed evaluations and supportive treatment planning for migraine, stroke, epilepsy and neurological disorders.
+</p>
+
+<div class="doctor-points">
+
+<div class="doctor-point">
+
+<div class="point-icon">
+✓
+</div>
+
+<div>
+
+<h4>
+Advanced Neurological Evaluation
+</h4>
+
+<p>
+Detailed diagnosis and consultation for neurological disorders.
+</p>
+
+</div>
+
+</div>
+
+<div class="doctor-point">
+
+<div class="point-icon">
+✓
+</div>
+
+<div>
+
+<h4>
+Patient-Focused Consultation
+</h4>
+
+<p>
+Calm and supportive consultations designed around patient comfort.
+</p>
+
+</div>
+
+</div>
+
+<div class="doctor-point">
+
+<div class="point-icon">
+✓
+</div>
+
+<div>
+
+<h4>
+Long-Term Treatment Guidance
+</h4>
+
+<p>
+Structured treatment plans with long-term follow-up care.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- REVIEWS -->
+
+<section id="reviews">
+
+<div class="container">
+
+<div class="reveal">
+
+<div class="section-tag">
+Patient Testimonials
+</div>
+
+<h2 class="section-title">
+What Patients Say
+</h2>
+
+<p class="section-sub">
+Real experiences from patients who trusted SIMS Neuro Clinics.
+</p>
+
+</div>
+
+<div class="reviews-grid">
+
+<div class="review-card reveal">
+
+<div class="review-user">
+
+<img 
+src="https://randomuser.me/api/portraits/men/32.jpg"
+class="review-profile"
+>
+
+<div>
+
+<h4>
+Ravi Kumar
+</h4>
+
+<div class="stars">
+★★★★★
+</div>
+
+</div>
+
+</div>
+
+<p>
+Excellent neurological consultation experience.
+Very patient, supportive and professional throughout.
+</p>
+
+</div>
+
+<div class="review-card reveal">
+
+<div class="review-user">
+
+<img 
+src="https://randomuser.me/api/portraits/women/44.jpg"
+class="review-profile"
+>
+
+<div>
+
+<h4>
+Lakshmi Devi
+</h4>
+
+<div class="stars">
+★★★★★
+</div>
+
+</div>
+
+</div>
+
+<p>
+Very calm environment and excellent diagnosis.
+Everything was explained very clearly and patiently.
+</p>
+
+</div>
+
+<div class="review-card reveal">
+
+<div class="review-user">
+
+<img 
+src="https://randomuser.me/api/portraits/men/75.jpg"
+class="review-profile"
+>
+
+<div>
+
+<h4>
+Sai Teja
+</h4>
+
+<div class="stars">
+★★★★★
+</div>
+
+</div>
+
+</div>
+
+<p>
+One of the best neurology consultation experiences in Vijayawada.
+Highly recommended for neurological care.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- GALLERY -->
+
+<section id="gallery">
+
+<div class="container">
+
+<div class="reveal">
+
+<div class="section-tag">
+Inside SIMS Neuro
+</div>
+
+<h2 class="section-title">
+A Real-World Care Experience
+</h2>
+
+<p class="section-sub">
+Explore the consultation spaces, patient-focused care environment and modern neurological support experience.
+</p>
+
+</div>
+
+<div class="gallery-grid">
+
+<div class="gallery-card reveal">
+
+<img 
+src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=1200&auto=format&fit=crop"
+>
+
+<div class="gallery-content">
+
+<h3>
+Advanced Consultation Rooms
+</h3>
+
+<p>
+Comfortable spaces designed for calm and focused neurological consultations.
+</p>
+
+</div>
+
+</div>
+
+<div class="gallery-card reveal">
+
+<img 
+src="https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=1200&auto=format&fit=crop"
+>
+
+<div class="gallery-content">
+
+<h3>
+Modern Diagnosis
+</h3>
+
+<p>
+Technology-supported neurological evaluations with precision and care.
+</p>
+
+</div>
+
+</div>
+
+<div class="gallery-card reveal">
+
+<img 
+src="https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=1200&auto=format&fit=crop"
+>
+
+<div class="gallery-content">
+
+<h3>
+Patient-Centered Care
+</h3>
+
+<p>
+Supportive consultation experiences focused on patient comfort and trust.
+</p>
+
+</div>
+
+</div>
+
+<div class="gallery-card reveal">
+
+<img 
+src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?q=80&w=1200&auto=format&fit=crop"
+>
+
+<div class="gallery-content">
+
+<h3>
+Professional Medical Support
+</h3>
+
+<p>
+Dedicated neurological consultation and treatment planning for every patient.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- APPOINTMENT -->
+
+<section id="appointment">
+
+<div class="container appt-grid">
+
+<div class="reveal">
+
+<div class="section-tag">
+Book Consultation
+</div>
+
+<h2 class="section-title">
+Begin Your Consultation Experience
+</h2>
+
+<p class="section-sub" style="color:rgba(255,255,255,.7)">
+Book your neurological consultation with SIMS Neuro Clinics today.
+</p>
+
+</div>
+
+<div class="form-card reveal">
+
+<input type="text" placeholder="Full Name">
+
+<input type="tel" placeholder="Phone Number">
+
+<select>
+<option>Select Concern</option>
+<option>Migraine</option>
+<option>Stroke Care</option>
+<option>Epilepsy</option>
+<option>Parkinson’s</option>
+</select>
+
+<select>
+<option>Preferred Time</option>
+<option>Morning</option>
+<option>Afternoon</option>
+<option>Evening</option>
+</select>
+
+<button class="submit-btn">
+Book Your Consultation
+</button>
+
+<div class="quick-buttons">
+
+<a href="https://wa.me/917660049499">
+WhatsApp
+</a>
+
+<a href="tel:07660049499">
+Call Clinic
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FAQ -->
+
+<section>
+
+<div class="container">
+
+<div class="reveal">
+
+<div class="section-tag">
+Common Questions
+</div>
+
+<h2 class="section-title">
+Frequently Asked Questions
+</h2>
+
+</div>
+
+<div class="faq-list">
+
+<div class="faq-item reveal">
+
+<div class="faq-question">
+
+<h4>
+What are the consultation timings?
+</h4>
+
+<div class="faq-icon">
++
+</div>
+
+</div>
+
+<div class="faq-answer">
+
+<p>
+Consultations are available throughout the day with flexible appointment scheduling.
+</p>
+
+</div>
+
+</div>
+
+<div class="faq-item reveal">
+
+<div class="faq-question">
+
+<h4>
+How can I book an appointment?
+</h4>
+
+<div class="faq-icon">
++
+</div>
+
+</div>
+
+<div class="faq-answer">
+
+<p>
+You can book through phone, WhatsApp or using the consultation form.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-grid">
+
+<div>
+
+<div class="footer-logo">
+SIMS Neuro Clinics
+</div>
+
+<p class="footer-text">
+Advanced neurological consultation and compassionate patient care in Vijayawada.
+</p>
+
+</div>
+
+<div>
+
+<div class="footer-heading">
+Contact
+</div>
+
+<div class="footer-links">
+
+<a href="#">
+076600 49499
+</a>
+
+<a href="#">
+WhatsApp Consultation
+</a>
+
+</div>
+
+</div>
+
+<div>
+
+<div class="footer-heading">
+Address
+</div>
+
+<div class="footer-links">
+
+<a href="#">
+Kaleswararao Rd
+</a>
+
+<a href="#">
+Vijayawada
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+<div>
+© 2026 SIMS Neuro Clinics
+</div>
+
+<div>
+Trusted Neurology Care · Vijayawada
+</div>
+
+</div>
+
+</footer>
+
+<!-- FLOAT -->
+
+<a href="https://wa.me/917660049499" class="wa-float">
+💬
+</a>
+
+
+<script>
+
+/* NAVBAR */
+
+window.addEventListener("scroll",()=>{
+
+const nav=document.getElementById("navbar");
+
+if(window.scrollY>50){
+nav.classList.add("scrolled");
+}
+else{
+nav.classList.remove("scrolled");
+}
+
+});
+
+/* REVEAL */
+
+const reveals=document.querySelectorAll(".reveal");
+
+window.addEventListener("scroll",reveal);
+
+function reveal(){
+
+for(let i=0;i<reveals.length;i++){
+
+const windowHeight=window.innerHeight;
+
+const top=reveals[i].getBoundingClientRect().top;
+
+if(top<windowHeight-80){
+reveals[i].classList.add("active");
+}
+
+}
+
+}
+
+reveal();
+
+</script>
+
+</body>
+
+</html>
